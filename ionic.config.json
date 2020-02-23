@@ -1,0 +1,7 @@
+{
+  "name": "spentGrain",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
