@@ -1,0 +1,2 @@
+class Brewer < User
+end
