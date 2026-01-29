@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_24_011005) do
+ActiveRecord::Schema[7.1].define(version: 2026_01_29_023317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brew_days", force: :cascade do |t|
+    t.integer "quantity_produced", default: 0
+    t.string "type_of_grain"
+    t.boolean "pickup_only", default: true
+    t.boolean "provides_container", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "grain_requests", force: :cascade do |t|
+    t.float "desired_quantity", default: 0.0
+    t.float "minimum_quantity", default: 0.0
+    t.float "maximum_quantity", default: 0.0
+    t.boolean "accepts_drop_off", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
